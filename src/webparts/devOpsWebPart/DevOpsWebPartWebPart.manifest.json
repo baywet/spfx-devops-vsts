@@ -1,0 +1,20 @@
+{
+  "$schema": "../../../node_modules/@microsoft/sp-module-interfaces/lib/manifestSchemas/jsonSchemas/clientSideComponentManifestSchema.json",
+
+  "id": "209f096f-f1ae-495c-9df0-d93477429da0",
+  "alias": "DevOpsWebPartWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "209f096f-f1ae-495c-9df0-d93477429da0",
+    "group": { "default": "Under Development" },
+    "title": { "default": "DevOpsWebPart" },
+    "description": { "default": "WebPart that supports devops" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "DevOpsWebPart"
+    }
+  }]
+}

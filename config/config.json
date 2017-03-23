@@ -1,0 +1,13 @@
+{
+  "entries": [
+    {
+      "entry": "./lib/webparts/devOpsWebPart/DevOpsWebPartWebPart.js",
+      "manifest": "./src/webparts/devOpsWebPart/DevOpsWebPartWebPart.manifest.json",
+      "outputPath": "./dist/dev-ops-web-part.bundle.js"
+    }
+  ],
+  "externals": {},
+  "localizedResources": {
+    "devOpsWebPartStrings": "webparts/devOpsWebPart/loc/{locale}.js"
+  }
+}
