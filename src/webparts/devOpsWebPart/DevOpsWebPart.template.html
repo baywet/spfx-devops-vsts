@@ -8,6 +8,11 @@
           <a href="https://aka.ms/spfx" data-bind="attr: {class:buttonClass}">
             <span data-bind="attr: {class:labelClass}">Learn more</span>
           </a>
+          <h2>Magic Calculator</h2>
+          <input type="number" data-bind="value: opA" /><br />
+          <input type="number" data-bind="value: opB" /><br />
+          <input type="button" data-bind="click: doCalculation" value="add" /><br />
+          <span>Result  :  </span><span data-bind="text: opResult"></span>
         </div>
       </div>
     </div>
