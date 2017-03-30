@@ -21,7 +21,8 @@
     "@types/chai-as-promised": "0.0.30",
     "@types/mocha": ">=2.2.33 <2.6.0",
     "chai-as-promised": "^6.0.0",
-    "gulp": "~3.9.1"
+    "gulp": "~3.9.1",
+    "karma-junit-reporter": "^1.2.0"
   },
   "scripts": {
     "build": "gulp bundle",
