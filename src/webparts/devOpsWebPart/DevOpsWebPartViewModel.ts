@@ -1,17 +1,20 @@
-import * as ko from 'knockout';
-import styles from './DevOpsWebPart.module.scss';
-import { IDevOpsWebPartWebPartProps } from './IDevOpsWebPartWebPartProps';
-import { DevOpsWebPartService } from './DevOpsWebPart.service';
+import * as ko from "knockout";
+import styles from "./DevOpsWebPart.module.scss";
+import { IDevOpsWebPartWebPartProps } from "./IDevOpsWebPartWebPartProps";
+import { DevOpsWebPartService } from "./DevOpsWebPart.service";
+import { ISPListCollectionService, ISPList } from "./dataservice";
 
 export interface IDevOpsWebPartBindingContext extends IDevOpsWebPartWebPartProps {
   shouter: KnockoutSubscribable<{}>;
+  dataService: ISPListCollectionService;
 }
 
 export default class DevOpsWebPartViewModel {
-  public description: KnockoutObservable<string> = ko.observable('');
+  public description: KnockoutObservable<string> = ko.observable("");
   public opA = ko.observable<string>("0");
   public opB = ko.observable<string>("0");
   public opResult = ko.observable<number>(0);
+  public listCollection = ko.observableArray<ISPList>();
 
   public labelClass: string = styles.label;
   public helloWorldClass: string = styles.helloWorld;
@@ -26,11 +29,13 @@ export default class DevOpsWebPartViewModel {
   
   constructor(bindings: IDevOpsWebPartBindingContext) {
     this.description(bindings.description);
-
+    bindings.dataService.getListData().then((value)=> {
+      this.listCollection(value.value);
+    });
     // When web part description is updated, change this view model's description.
     bindings.shouter.subscribe((value: string) => {
       this.description(value);
-    }, this, 'description');
+    }, this, "description");
   }
   
 }

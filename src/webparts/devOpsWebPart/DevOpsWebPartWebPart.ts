@@ -1,5 +1,5 @@
 import * as ko from 'knockout';
-import { Version } from '@microsoft/sp-core-library';
+import { Version, Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
@@ -9,6 +9,7 @@ import {
 import * as strings from 'devOpsWebPartStrings';
 import DevOpsWebPartViewModel, { IDevOpsWebPartBindingContext } from './DevOpsWebPartViewModel';
 import { IDevOpsWebPartWebPartProps } from './IDevOpsWebPartWebPartProps';
+import { MockSPListCollectionService, HttpSPListCollectionService } from "./dataservice";
 
 let _instance: number = 0;
 
@@ -36,10 +37,11 @@ export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsW
     this._koDescription.subscribe((newValue: string) => {
       this._shouter.notifySubscribers(newValue, 'description');
     });
-
+    const dataService = Environment.type === EnvironmentType.Local ? new MockSPListCollectionService() : new HttpSPListCollectionService(this.context);
     const bindings: IDevOpsWebPartBindingContext = {
       description: this.properties.description,
-      shouter: this._shouter
+      shouter: this._shouter,
+      dataService: dataService
     };
 
     ko.applyBindings(bindings, this._componentElement);
