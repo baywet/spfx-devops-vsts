@@ -1,0 +1,293 @@
+{
+  "build": [
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "npm install",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "cwd": "",
+        "command": "install",
+        "arguments": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "gulp test",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "gulpFile": "gulpfile.js",
+        "targets": "test",
+        "arguments": "",
+        "cwd": "",
+        "gulpjs": "node_modules/gulp/bin/gulp.js",
+        "publishJUnitResults": "true",
+        "testResultsFiles": "**/test-*.xml",
+        "testRunTitle": "",
+        "enableCodeCoverage": "false",
+        "testFramework": "Mocha",
+        "srcFiles": "src",
+        "testFiles": "lib/**/tests/*.test.js"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Publish Code Coverage Results $(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "2a7ebc54-c13e-490e-81a5-d7561ab7cd97",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "codeCoverageTool": "Cobertura",
+        "summaryFileLocation": "$(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml",
+        "reportDirectory": "$(Build.SourcesDirectory)/temp/coverage/cobertura",
+        "additionalCodeCoverageFiles": ""
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "gulp bundle",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "gulpFile": "gulpfile.js",
+        "targets": "bundle",
+        "arguments": "--ship",
+        "cwd": "",
+        "gulpjs": "node_modules/gulp/bin/gulp.js",
+        "publishJUnitResults": "false",
+        "testResultsFiles": "**/TEST-*.xml",
+        "testRunTitle": "",
+        "enableCodeCoverage": "false",
+        "testFramework": "Mocha",
+        "srcFiles": "",
+        "testFiles": "test/*.js"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "gulp package-solution",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+        "versionSpec": "0.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "gulpFile": "gulpfile.js",
+        "targets": "package-solution",
+        "arguments": "--ship",
+        "cwd": "",
+        "gulpjs": "node_modules/gulp/bin/gulp.js",
+        "publishJUnitResults": "false",
+        "testResultsFiles": "**/TEST-*.xml",
+        "testRunTitle": "",
+        "enableCodeCoverage": "false",
+        "testFramework": "Mocha",
+        "srcFiles": "",
+        "testFiles": "test/*.js"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Copy Publish Artifact: drop",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "CopyRoot": "",
+        "Contents": "config\\**\\*\ndist\\**\\*\nlib\\**\\*\nsharepoint\\**\\*\ntemp\\**\\*\ntypings\\**\\*\ngulpfile.js\npackage.json",
+        "ArtifactName": "drop",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+      }
+    },
+    {
+      "enabled": true,
+      "continueOnError": false,
+      "alwaysRun": false,
+      "displayName": "Copy Publish Artifact: package",
+      "timeoutInMinutes": 0,
+      "task": {
+        "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
+        "versionSpec": "1.*",
+        "definitionType": "task"
+      },
+      "inputs": {
+        "CopyRoot": "",
+        "Contents": "**\\*.sppkg",
+        "ArtifactName": "package",
+        "ArtifactType": "Container",
+        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+      }
+    }
+  ],
+  "options": [
+    {
+      "enabled": false,
+      "definition": {
+        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
+      },
+      "inputs": {
+        "multipliers": "[]",
+        "parallel": "false",
+        "continueOnError": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
+      },
+      "inputs": {
+        "workItemType": "406440",
+        "assignToRequestor": "true",
+        "additionalFields": "{}"
+      }
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
+      },
+      "inputs": {}
+    }
+  ],
+  "triggers": [
+    {
+      "branchFilters": [
+        "+refs/heads/develop"
+      ],
+      "pathFilters": [],
+      "batchChanges": true,
+      "maxConcurrentBuildsPerBranch": 1,
+      "pollingInterval": 0,
+      "triggerType": 2
+    }
+  ],
+  "variables": {
+    "system.debug": {
+      "value": "false",
+      "allowOverride": true
+    },
+    "PHANTOMJS_BIN": {
+      "value": "C:\\NPM\\Modules\\PhantomJS.cmd"
+    }
+  },
+  "retentionRules": [
+    {
+      "branches": [
+        "+refs/heads/*"
+      ],
+      "artifacts": [],
+      "artifactTypesToDelete": [
+        "FilePath",
+        "SymbolStore"
+      ],
+      "daysToKeep": 10,
+      "minimumToKeep": 1,
+      "deleteBuildRecord": true,
+      "deleteTestResults": true
+    }
+  ],
+  "_links": {
+    "self": {
+      "href": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13"
+    },
+    "web": {
+      "href": "https://baywet.visualstudio.com/_permalink/_build/index?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
+    },
+    "editor": {
+      "href": "https://baywet.visualstudio.com/_permalink/_build/definitionEditor?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
+    }
+  },
+  "comment": "cleaning tenant information",
+  "jobAuthorizationScope": 1,
+  "jobTimeoutInMinutes": 60,
+  "jobCancelTimeoutInMinutes": 5,
+  "repository": {
+    "properties": {
+      "cleanOptions": "0",
+      "labelSources": "0",
+      "labelSourcesFormat": "$(build.buildNumber)",
+      "reportBuildStatus": "true",
+      "gitLfsSupport": "false",
+      "skipSyncSource": "false",
+      "fetchDepth": "0"
+    },
+    "id": "2ee7c4d8-ff16-4f49-8e5e-a7d8d6564e46",
+    "type": "TfsGit",
+    "name": "SpFxDevops",
+    "url": "https://baywet.visualstudio.com/Sessions/_git/SpFxDevops",
+    "defaultBranch": "refs/heads/develop",
+    "clean": "false",
+    "checkoutSubmodules": false
+  },
+  "processParameters": {
+    "inputs": []
+  },
+  "quality": 1,
+  "authoredBy": {
+    "id": "536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
+    "displayName": "Vincent BIRET",
+    "uniqueName": "",
+    "url": "https://app.vssps.visualstudio.com/Ac310e65e-2e47-4665-b411-1b0912dbb016/_apis/Identities/536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
+    "imageUrl": "https://baywet.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d"
+  },
+  "queue": {
+    "id": 2,
+    "name": "Hosted",
+    "pool": {
+      "id": 2,
+      "name": "Hosted",
+      "isHosted": true
+    }
+  },
+  "id": 13,
+  "name": "SpFxDevOps",
+  "url": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13",
+  "uri": "vstfs:///Build/Definition/13",
+  "path": "\\",
+  "type": 2,
+  "revision": 25,
+  "createdDate": "2017-04-20T03:16:44.117Z",
+  "project": {
+    "id": "b80138c3-28df-4282-bc1d-6fa534f75b70",
+    "name": "Sessions",
+    "description": "Stockage du code de mes sessions quand pas sur github",
+    "url": "https://baywet.visualstudio.com/_apis/projects/b80138c3-28df-4282-bc1d-6fa534f75b70",
+    "state": "wellFormed",
+    "revision": 438062069
+  }
+}

@@ -13,6 +13,12 @@
           <input type="number" data-bind="value: opB" /><br />
           <input type="button" data-bind="click: doCalculation" value="add" /><br />
           <span>Result  :  </span><span data-bind="text: opResult"></span>
+          <!--<pre data-bind="text: ko.toJSON($data, null, 2)"></pre>-->
+          <h2>My Lists</h2>
+          <div data-bind="foreach: listCollection">
+            Title: <span data-bind="text: Title"></span><br />
+            Id: <span data-bind="text: Id"></span><br />
+          </div>
         </div>
       </div>
     </div>
