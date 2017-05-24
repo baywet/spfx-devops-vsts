@@ -11,7 +11,7 @@
     "@microsoft/sp-webpart-base": "~1.0.0",
     "@types/knockout": "3.4.39",
     "@types/webpack-env": ">=1.12.1 <1.14.0",
-    "knockout": "3.4.0"
+    "knockout": "^3.4.2"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "^1.0.1",
@@ -26,7 +26,7 @@
     "karma-junit-reporter": "^1.2.0",
     "karma-remap-coverage": "^0.1.4",
     "karma-remap-istanbul": "^0.6.0",
-    "yargs": "^7.0.2"
+    "yargs": "^8.0.1"
   },
   "scripts": {
     "build": "gulp bundle",
