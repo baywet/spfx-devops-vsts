@@ -6,8 +6,8 @@ The purpose of this repository is to demonstrate how to better integrate SharePo
 
 ### Code coverage results and unit tests results in VSTS
 
-In order to use a custom karmaJS configuration we need to edit the gulpfile provided by the yeoman template (`gulfile.js` L29-31)  
-The provided configuration will reuse and override the default one provided by spfx modules `karma.config.js`  
+In order to use a custom karmaJS configuration we need to edit the gulpfile provided by the yeoman template (`gulfile.js` L72-74)  
+The provided configuration will reuse and override the default one provided by spfx modules `config/karma.config.js`  
 
 We're doing a few things there:
 - Provide a configuration for Junit test reporter: that will output test results in a format VSTS understands
@@ -34,12 +34,12 @@ chai.use(chaiAsPromised);
 ```
 
 ## Publishing to SharePoint
-Elio Struyf wrote an awesome [blog post on the subject](https://www.eliostruyf.com/automate-publishing-of-your-sharepoint-framework-scripts-to-office-365-public-cdn/)  
+Elio Struyf wrote two awesome blog post on the subject [here](https://www.eliostruyf.com/automate-publishing-of-your-sharepoint-framework-scripts-to-office-365-public-cdn/) and [there](https://www.eliostruyf.com/configure-a-build-and-release-pipeline-for-your-sharepoint-framework-solution-deployments/)  
 However I took the liberty to improve the code a little bit in other to be able to provide credentials as arguments from VSTS.  
-Notice the changes in `gulfile.js` L6-26.  
+Notice the changes in `gulfile.js` L6-70.  
 You'll also need to install the following modules:
 ```
-npm i gulp-spsync-creds yargs -D
+npm i gulp-spsync-creds -D
 ```
 
 ## Configuring VSTS
