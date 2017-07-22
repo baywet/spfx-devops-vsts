@@ -23,19 +23,18 @@ export default class DevOpsWebPartViewModel {
   public buttonClass: string = `ms-Button ${styles.button}`;
   private service: DevOpsWebPartService = new DevOpsWebPartService();
   public doCalculation = () => {
-    let result = this.service.add(parseInt(this.opA()), parseInt(this.opB()));
+    const base10Radix: number = 10;
+    const result: number = this.service.add(parseInt(this.opA(), base10Radix), parseInt(this.opB(), base10Radix));
     this.opResult(result);
   }
-  
   constructor(bindings: IDevOpsWebPartBindingContext) {
     this.description(bindings.description);
     bindings.dataService.getListData().then((value)=> {
       this.listCollection(value.value);
     });
-    // When web part description is updated, change this view model's description.
+    // when web part description is updated, change this view model's description.
     bindings.shouter.subscribe((value: string) => {
       this.description(value);
     }, this, "description");
   }
-  
 }
