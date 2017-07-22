@@ -34,7 +34,7 @@ chai.use(chaiAsPromised);
 ```
 
 ## Publishing to SharePoint
-Elio Struyf wrote two awesome blog post on the subject [here](https://www.eliostruyf.com/automate-publishing-of-your-sharepoint-framework-scripts-to-office-365-public-cdn/) and [there](https://www.eliostruyf.com/configure-a-build-and-release-pipeline-for-your-sharepoint-framework-solution-deployments/)  
+Elio Struyf wrote two awesome blog post on the subject [here](https://www.eliostruyf.com/automate-publishing-of-your-sharepoint-framework-scripts-to-office-365-public-cdn/), [here](https://www.eliostruyf.com/automate-sharepoint-framework-solution-package-deployment/) and [there](https://www.eliostruyf.com/configure-a-build-and-release-pipeline-for-your-sharepoint-framework-solution-deployments/)  
 However I took the liberty to improve the code a little bit in other to be able to provide credentials as arguments from VSTS.  
 Notice the changes in `gulfile.js` L6-70.  
 You'll also need to install the following modules:

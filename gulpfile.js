@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const build = require('@microsoft/sp-build-web');
 const _ = require('lodash');
 const spsync = require('gulp-spsync-creds').sync;
+const fs = require('fs');
 
 
 build.task('upload-to-sharepoint', {
