@@ -29,6 +29,6 @@ chai.use(chaiAsPromised);
 describe("DevOpsWebPartWebPart", () => {
   it("should add numbers async", () => {
     const asyncResult:Promise<number> = service.addAsync(1, 3);
-    return asyncResult.should.eventually.equal(4); // npm install chai-as-promised @types/chai-as-promised -D
+    return asyncResult.should.eventually.equal(4); // npm install chai-as-promised@6.0.0 @types/chai-as-promised -D
   });
 });

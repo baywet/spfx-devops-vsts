@@ -22,8 +22,9 @@ npm i karma-junit-reporter karma-remap-coverage karma-remap-istanbul -D
 ### Writing better unit tests
 To make it easier writing unit tests we added some extra modules
 ```
-npm i @types/chai-as-promised chai-as-promised -D
+npm i @types/chai-as-promised chai-as-promised@6.0.0 -D
 ```
+*Currently PhantomJS doesn't support es6/2015 and SPFX doesn't provide polyfills for unit tests for 3rd party dependencies [see issue](https://github.com/SharePoint/sp-dev-docs/issues/736)*  
 This will help you writing tests against async methods.  
 Note that the following lines have been added in the unit test:  
 ```
