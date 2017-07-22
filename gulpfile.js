@@ -15,7 +15,7 @@ build.task('upload-to-sharepoint', {
             tenant: config.args['tenant'] || "",
             cdnSite: config.args['cdnsite'] || "",
             cdnLib: config.args['cdnlib'] || "",
-        }
+        };
 
         return new Promise((resolve, reject) => {
             const deployFolder = require('./config/copy-assets.json');
@@ -48,10 +48,12 @@ build.task('update-manifest', {
 
 build.task('upload-app-pkg', {
       execute: (config) => {
-            environmentInfo.username = config.args['username'] || environmentInfo.username;
-            environmentInfo.password = config.args['password'] || environmentInfo.password;
-            environmentInfo.tenant = config.args['tenant'] || environmentInfo.tenant;
-            environmentInfo.catalogSite = config.args['catalogsite'] || environmentInfo.catalogSite;
+            const environment = {
+                username: config.args['username'] || "",
+                password: config.args['password'] || "",
+                tenant: config.args['tenant'] || "",
+                catalogSite: config.args['catalogsite'],
+            };
 
             return new Promise((resolve, reject) => {
                   const pkgFile = require('./config/package-solution.json');
@@ -59,9 +61,9 @@ build.task('upload-app-pkg', {
 
                   return gulp.src(folderLocation)
                         .pipe(spsync({
-                              "username": environmentInfo.username,
-                              "password": environmentInfo.password,
-                              "site": `https://${environmentInfo.tenant}.sharepoint.com/${environmentInfo.catalogSite}`,
+                              "username": environment.username,
+                              "password": environment.password,
+                              "site": `https://${environment.tenant}.sharepoint.com/${environment.catalogSite}`,
                               "libraryPath": "AppCatalog",
                               "publish": true
                         }))
