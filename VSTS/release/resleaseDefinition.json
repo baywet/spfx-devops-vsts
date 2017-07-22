@@ -1,8 +1,9 @@
 {
-  "source": 2,
+  "source": "userInterface",
   "id": 1,
-  "revision": 3,
+  "revision": 5,
   "name": "SpFxDevOpsDevQA",
+  "description": null,
   "createdBy": {
     "id": "536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
     "displayName": "Vincent BIRET",
@@ -18,8 +19,7 @@
     "url": "https://app.vssps.visualstudio.com/Ac310e65e-2e47-4665-b411-1b0912dbb016/_apis/Identities/536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
     "imageUrl": "https://baywet.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d"
   },
-  "modifiedOn": "2017-04-08T16:04:57.787Z",
-  "lastRelease": null,
+  "modifiedOn": "2017-07-22T23:07:06.233Z",
   "path": "\\",
   "variables": {},
   "variableGroups": [],
@@ -36,8 +36,8 @@
         "imageUrl": "https://baywet.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d"
       },
       "variables": {
-        "targetUrl": {
-          "value": "https://baywet.sharepoint.com/sites/sessionspfxdevops/"
+        "tenant": {
+          "value": "tenant"
         },
         "username": {
           "value": "admin@tenant.onmicrosoft.com"
@@ -45,6 +45,15 @@
         "password": {
           "value": null,
           "isSecret": true
+        },
+        "cdnlib": {
+          "value": "SiteAssets/spfx"
+        },
+        "catalogsite": {
+          "value": "sites/appcatalog"
+        },
+        "cdnsite": {
+          "value": "sites/sessionspfxdevops"
         }
       },
       "preDeployApprovals": {
@@ -75,16 +84,17 @@
         {
           "deploymentInput": {
             "parallelExecution": {
-              "parallelExecutionType": 0
+              "parallelExecutionType": "none"
             },
             "skipArtifactsDownload": false,
-            "timeoutInMinutes": 0,
             "queueId": 2,
             "demands": [],
-            "enableAccessToken": false
+            "enableAccessToken": false,
+            "timeoutInMinutes": 0,
+            "jobCancelTimeoutInMinutes": 1
           },
           "rank": 1,
-          "phaseType": 1,
+          "phaseType": "agentBasedDeployment",
           "name": "Run on agent",
           "workflowTasks": [
             {
@@ -114,8 +124,32 @@
               "inputs": {
                 "gulpFile": "$(System.DefaultWorkingDirectory)/SpFxDevOps/drop/gulpfile.js",
                 "targets": "upload-to-sharepoint",
-                "arguments": "--username $(username) --password $(password) --targetUrl $(targetUrl)",
+                "arguments": "--ship --username $(username) --password $(password) --tenant $(tenant) --cdnsite $(cdnsite) --cdnlib $(cdnlib)",
                 "cwd": "$(System.DefaultWorkingDirectory)/SpFxDevOps/drop",
+                "gulpjs": "node_modules/gulp/bin/gulp.js",
+                "publishJUnitResults": "false",
+                "testResultsFiles": "**/TEST-*.xml",
+                "testRunTitle": "",
+                "enableCodeCoverage": "false",
+                "testFramework": "Mocha",
+                "srcFiles": "",
+                "testFiles": "test/*.js"
+              }
+            },
+            {
+              "taskId": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+              "version": "0.*",
+              "name": "gulp upload-app-pkg",
+              "enabled": true,
+              "alwaysRun": false,
+              "continueOnError": false,
+              "timeoutInMinutes": 0,
+              "definitionType": "task",
+              "inputs": {
+                "gulpFile": "$(System.DefaultWorkingDirectory)/SpFxDevOps/drop/gulpfile.js",
+                "targets": "upload-app-pkg",
+                "arguments": "--ship --username $(username) --password $(password) --tenant $(tenant) --catalogsite $(catalogsite)",
+                "cwd": "",
                 "gulpjs": "node_modules/gulp/bin/gulp.js",
                 "publishJUnitResults": "false",
                 "testResultsFiles": "**/TEST-*.xml",
@@ -134,13 +168,14 @@
         "emailRecipients": "release.environment.owner;release.creator",
         "skipArtifactsDownload": false,
         "timeoutInMinutes": 0,
-        "enableAccessToken": false
+        "enableAccessToken": false,
+        "publishDeploymentStatus": false
       },
       "demands": [],
       "conditions": [
         {
           "name": "ReleaseStarted",
-          "conditionType": 1,
+          "conditionType": "event",
           "value": ""
         }
       ],
@@ -153,7 +188,8 @@
         "daysToKeep": 30,
         "releasesToKeep": 3,
         "retainBuild": true
-      }
+      },
+      "properties": {}
     }
   ],
   "artifacts": [
@@ -186,21 +222,20 @@
     {
       "artifactAlias": "SpFxDevOps",
       "triggerConditions": [],
-      "triggerType": 1
+      "triggerType": "artifactSource"
     }
   ],
   "releaseNameFormat": "Release-$(rev:r)",
-  "retentionPolicy": null,
   "url": "https://baywet.vsrm.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/Release/definitions/1",
   "_links": {
     "self": {
       "href": "https://baywet.vsrm.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/Release/definitions/1"
     },
     "web": {
-      "href": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apps/hub/ms.vss-releaseManagement-web.hub-explorer?definitionId=1"
+      "href": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_release?definitionId=1"
     }
   },
-  "comment": "fixing path to gulp file",
+  "comment": "updating tasks to include package deployment",
   "tags": [],
   "properties": {}
 }
