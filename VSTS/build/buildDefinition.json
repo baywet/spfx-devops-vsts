@@ -1,157 +1,4 @@
 {
-  "build": [
-    {
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "npm install",
-      "timeoutInMinutes": 0,
-      "task": {
-        "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
-        "versionSpec": "0.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "cwd": "",
-        "command": "install",
-        "arguments": ""
-      }
-    },
-    {
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "gulp test",
-      "timeoutInMinutes": 0,
-      "task": {
-        "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
-        "versionSpec": "0.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "gulpFile": "gulpfile.js",
-        "targets": "test",
-        "arguments": "",
-        "cwd": "",
-        "gulpjs": "node_modules/gulp/bin/gulp.js",
-        "publishJUnitResults": "true",
-        "testResultsFiles": "**/test-*.xml",
-        "testRunTitle": "",
-        "enableCodeCoverage": "false",
-        "testFramework": "Mocha",
-        "srcFiles": "src",
-        "testFiles": "lib/**/tests/*.test.js"
-      }
-    },
-    {
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "Publish Code Coverage Results $(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml",
-      "timeoutInMinutes": 0,
-      "task": {
-        "id": "2a7ebc54-c13e-490e-81a5-d7561ab7cd97",
-        "versionSpec": "1.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "codeCoverageTool": "Cobertura",
-        "summaryFileLocation": "$(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml",
-        "reportDirectory": "$(Build.SourcesDirectory)/temp/coverage/cobertura",
-        "additionalCodeCoverageFiles": ""
-      }
-    },
-    {
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "gulp bundle",
-      "timeoutInMinutes": 0,
-      "task": {
-        "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
-        "versionSpec": "0.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "gulpFile": "gulpfile.js",
-        "targets": "bundle",
-        "arguments": "--ship",
-        "cwd": "",
-        "gulpjs": "node_modules/gulp/bin/gulp.js",
-        "publishJUnitResults": "false",
-        "testResultsFiles": "**/TEST-*.xml",
-        "testRunTitle": "",
-        "enableCodeCoverage": "false",
-        "testFramework": "Mocha",
-        "srcFiles": "",
-        "testFiles": "test/*.js"
-      }
-    },
-    {
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "gulp package-solution",
-      "timeoutInMinutes": 0,
-      "task": {
-        "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
-        "versionSpec": "0.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "gulpFile": "gulpfile.js",
-        "targets": "package-solution",
-        "arguments": "--ship",
-        "cwd": "",
-        "gulpjs": "node_modules/gulp/bin/gulp.js",
-        "publishJUnitResults": "false",
-        "testResultsFiles": "**/TEST-*.xml",
-        "testRunTitle": "",
-        "enableCodeCoverage": "false",
-        "testFramework": "Mocha",
-        "srcFiles": "",
-        "testFiles": "test/*.js"
-      }
-    },
-    {
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "Copy Publish Artifact: drop",
-      "timeoutInMinutes": 0,
-      "task": {
-        "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
-        "versionSpec": "1.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "CopyRoot": "",
-        "Contents": "config\\**\\*\ndist\\**\\*\nlib\\**\\*\nsharepoint\\**\\*\ntemp\\**\\*\ntypings\\**\\*\ngulpfile.js\npackage.json",
-        "ArtifactName": "drop",
-        "ArtifactType": "Container",
-        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
-      }
-    },
-    {
-      "enabled": true,
-      "continueOnError": false,
-      "alwaysRun": false,
-      "displayName": "Copy Publish Artifact: package",
-      "timeoutInMinutes": 0,
-      "task": {
-        "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
-        "versionSpec": "1.*",
-        "definitionType": "task"
-      },
-      "inputs": {
-        "CopyRoot": "",
-        "Contents": "**\\*.sppkg",
-        "ArtifactName": "package",
-        "ArtifactType": "Container",
-        "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
-      }
-    }
-  ],
   "options": [
     {
       "enabled": false,
@@ -182,6 +29,16 @@
         "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
       },
       "inputs": {}
+    },
+    {
+      "enabled": false,
+      "definition": {
+        "id": "5d58cc01-7c75-450c-be18-a388ddb129ec"
+      },
+      "inputs": {
+        "branchFilters": "[\"+refs/heads/*\"]",
+        "additionalFields": "{}"
+      }
     }
   ],
   "triggers": [
@@ -232,10 +89,223 @@
       "href": "https://baywet.visualstudio.com/_permalink/_build/definitionEditor?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
     }
   },
-  "comment": "cleaning tenant information",
+  "comment": "adding the update manifest task",
   "jobAuthorizationScope": 1,
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
+  "process": {
+    "phases": [
+      {
+        "steps": [
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "npm install",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "NpmInstall_1",
+            "task": {
+              "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "cwd": "",
+              "command": "install",
+              "arguments": ""
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "gulp test",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "Gulp_2",
+            "task": {
+              "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "gulpFile": "gulpfile.js",
+              "targets": "test",
+              "arguments": "",
+              "cwd": "",
+              "gulpjs": "node_modules/gulp/bin/gulp.js",
+              "publishJUnitResults": "true",
+              "testResultsFiles": "**/test-*.xml",
+              "testRunTitle": "",
+              "enableCodeCoverage": "false",
+              "testFramework": "Mocha",
+              "srcFiles": "src",
+              "testFiles": "lib/**/tests/*.test.js"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Code Coverage Results $(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "PublishCodeCoverageResults_3",
+            "task": {
+              "id": "2a7ebc54-c13e-490e-81a5-d7561ab7cd97",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "codeCoverageTool": "Cobertura",
+              "summaryFileLocation": "$(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml",
+              "reportDirectory": "$(Build.SourcesDirectory)/temp/coverage/cobertura",
+              "additionalCodeCoverageFiles": "",
+              "failIfCoverageEmpty": "false"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "gulp update-manifest",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "Gulp8",
+            "task": {
+              "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "gulpFile": "gulpfile.js",
+              "targets": "update-manifest",
+              "arguments": "--cdnpath \"https://publiccdn.sharepoint.com/tenant/id/\"",
+              "cwd": "",
+              "gulpjs": "node_modules/gulp/bin/gulp.js",
+              "publishJUnitResults": "false",
+              "testResultsFiles": "**/TEST-*.xml",
+              "testRunTitle": "",
+              "enableCodeCoverage": "false",
+              "testFramework": "Mocha",
+              "srcFiles": "",
+              "testFiles": "test/*.js"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "gulp bundle",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "Gulp_4",
+            "task": {
+              "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "gulpFile": "gulpfile.js",
+              "targets": "bundle",
+              "arguments": "--ship",
+              "cwd": "",
+              "gulpjs": "node_modules/gulp/bin/gulp.js",
+              "publishJUnitResults": "false",
+              "testResultsFiles": "**/TEST-*.xml",
+              "testRunTitle": "",
+              "enableCodeCoverage": "false",
+              "testFramework": "Mocha",
+              "srcFiles": "",
+              "testFiles": "test/*.js"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "gulp package-solution",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "Gulp_5",
+            "task": {
+              "id": "b82cfbe4-34f9-40f5-889e-c8842ca9dd9d",
+              "versionSpec": "0.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "gulpFile": "gulpfile.js",
+              "targets": "package-solution",
+              "arguments": "--ship",
+              "cwd": "",
+              "gulpjs": "node_modules/gulp/bin/gulp.js",
+              "publishJUnitResults": "false",
+              "testResultsFiles": "**/TEST-*.xml",
+              "testRunTitle": "",
+              "enableCodeCoverage": "false",
+              "testFramework": "Mocha",
+              "srcFiles": "",
+              "testFiles": "test/*.js"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Copy Publish Artifact: drop",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "PublishBuildArtifacts_6",
+            "task": {
+              "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "CopyRoot": "",
+              "Contents": "config\\**\\*\ndist\\**\\*\nlib\\**\\*\nsharepoint\\**\\*\ntemp\\**\\*\ntypings\\**\\*\ngulpfile.js\npackage.json",
+              "ArtifactName": "drop",
+              "ArtifactType": "Container",
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Copy Publish Artifact: package",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "refName": "PublishBuildArtifacts_7",
+            "task": {
+              "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "CopyRoot": "",
+              "Contents": "**\\*.sppkg",
+              "ArtifactName": "package",
+              "ArtifactType": "Container",
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+            }
+          }
+        ],
+        "name": null,
+        "jobAuthorizationScope": 0
+      }
+    ],
+    "type": 1
+  },
   "repository": {
     "properties": {
       "cleanOptions": "0",
@@ -244,7 +314,8 @@
       "reportBuildStatus": "true",
       "gitLfsSupport": "false",
       "skipSyncSource": "false",
-      "fetchDepth": "0"
+      "fetchDepth": "0",
+      "checkoutNestedSubmodules": "false"
     },
     "id": "2ee7c4d8-ff16-4f49-8e5e-a7d8d6564e46",
     "type": "TfsGit",
@@ -280,14 +351,15 @@
   "uri": "vstfs:///Build/Definition/13",
   "path": "\\",
   "type": 2,
-  "revision": 25,
-  "createdDate": "2017-04-20T03:16:44.117Z",
+  "revision": 27,
+  "createdDate": "2017-07-22T23:05:01.007Z",
   "project": {
     "id": "b80138c3-28df-4282-bc1d-6fa534f75b70",
     "name": "Sessions",
     "description": "Stockage du code de mes sessions quand pas sur github",
     "url": "https://baywet.visualstudio.com/_apis/projects/b80138c3-28df-4282-bc1d-6fa534f75b70",
     "state": "wellFormed",
-    "revision": 438062069
+    "revision": 438062069,
+    "visibility": 0
   }
 }
