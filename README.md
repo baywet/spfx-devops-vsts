@@ -19,6 +19,9 @@ In order to use that configuration you need to install a few extra modules:
 npm i karma-junit-reporter karma-remap-coverage karma-remap-istanbul -D
 ```
 
+Next steps:
+- providing some stubs demos with [sinon](https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js) 
+
 ### Writing better unit tests
 To make it easier writing unit tests we added some extra modules
 ```
