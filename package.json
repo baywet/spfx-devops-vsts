@@ -26,7 +26,8 @@
     "gulp-spsync-creds": "^2.3.1",
     "karma-junit-reporter": "^1.2.0",
     "karma-remap-coverage": "^0.1.4",
-    "karma-remap-istanbul": "^0.6.0"
+    "karma-remap-istanbul": "^0.6.0",
+    "node-sppkg-deploy": "^1.1.1"
   },
   "scripts": {
     "build": "gulp bundle",
