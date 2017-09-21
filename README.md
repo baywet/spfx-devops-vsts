@@ -42,7 +42,7 @@ However I took the liberty to improve the code a little bit in other to be able 
 Notice the changes in `gulfile.js` L6-70.  
 You'll also need to install the following modules:
 ```
-npm i gulp-spsync-creds -D
+npm i gulp-spsync-creds node-sppkg-deploy -D
 ```
 
 ## Configuring VSTS
