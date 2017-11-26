@@ -1,0 +1,19 @@
+{
+  "$schema": "https://dev.office.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
+  "id": "209f096f-f1ae-495c-9df0-d93477429da0",
+  "alias": "DevOpsWebPart",
+  "componentType": "WebPart",
+  "version": "*",
+  "manifestVersion": 2,
+
+  "preconfiguredEntries": [{
+    "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Other
+    "group": { "default": "Other" },
+    "title": { "default": "DevOps" },
+    "description": { "default": "devOpsWebPart description" },
+    "officeFabricIconFontName": "Page",
+    "properties": {
+      "description": "DevOps"
+    }
+  }]
+}

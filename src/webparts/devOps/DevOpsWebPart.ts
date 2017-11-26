@@ -1,22 +1,22 @@
-import * as ko from 'knockout';
-import { Version, Environment, EnvironmentType } from '@microsoft/sp-core-library';
+import * as ko from "knockout";
+import { Version, Environment, EnvironmentType } from "@microsoft/sp-core-library";
 import {
   BaseClientSideWebPart,
   IPropertyPaneConfiguration,
   PropertyPaneTextField
-} from '@microsoft/sp-webpart-base';
+} from "@microsoft/sp-webpart-base";
 
-import * as strings from 'devOpsWebPartStrings';
-import DevOpsWebPartViewModel, { IDevOpsWebPartBindingContext } from './DevOpsWebPartViewModel';
-import { IDevOpsWebPartWebPartProps } from './IDevOpsWebPartWebPartProps';
+import * as strings from "DevOpsWebPartStrings";
+import DevOpsWebPartViewModel, { IDevOpsBindingContext } from "./DevOpsViewModel";
+import { IDevOpsWebPartProps } from "./IDevOpsWebPartProps";
 import { MockSPListCollectionService, HttpSPListCollectionService } from "./dataservice";
 
 let _instance: number = 0;
 
-export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsWebPartWebPartProps> {
+export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsWebPartProps> {
   private _id: number;
   private _componentElement: HTMLElement;
-  private _koDescription: KnockoutObservable<string> = ko.observable('');
+  private _koDescription: KnockoutObservable<string> = ko.observable("");
 
   /**
    * Shouter is used to communicate between web part and view model.
@@ -35,10 +35,10 @@ export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsW
 
     // When web part description is changed, notify view model to update.
     this._koDescription.subscribe((newValue: string) => {
-      this._shouter.notifySubscribers(newValue, 'description');
+      this._shouter.notifySubscribers(newValue, "description");
     });
     const dataService = Environment.type === EnvironmentType.Local ? new MockSPListCollectionService() : new HttpSPListCollectionService(this.context);
-    const bindings: IDevOpsWebPartBindingContext = {
+    const bindings: IDevOpsBindingContext = {
       description: this.properties.description,
       shouter: this._shouter,
       dataService: dataService
@@ -58,8 +58,8 @@ export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsW
   }
 
   private _createComponentElement(tagName: string): HTMLElement {
-    const componentElement: HTMLElement = document.createElement('div');
-    componentElement.setAttribute('data-bind', `component: { name: "${tagName}", params: $data }`);
+    const componentElement: HTMLElement = document.createElement("div");
+    componentElement.setAttribute("data-bind", `component: { name: "${tagName}", params: $data }`);
     return componentElement;
   }
 
@@ -68,14 +68,14 @@ export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsW
       tagName,
       {
         viewModel: DevOpsWebPartViewModel,
-        template: require('./DevOpsWebPart.template.html'),
+        template: require("./DevOpsWebPart.template.html"),
         synchronous: false
       }
     );
   }
 
   protected get dataVersion(): Version {
-    return Version.parse('1.0');
+    return Version.parse("1.0");
   }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
@@ -89,7 +89,7 @@ export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsW
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
+                PropertyPaneTextField("description", {
                   label: strings.DescriptionFieldLabel
                 })
               ]

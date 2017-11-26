@@ -4,7 +4,7 @@ declare interface IDevOpsWebPartStrings {
   DescriptionFieldLabel: string;
 }
 
-declare module 'devOpsWebPartStrings' {
+declare module 'DevOpsWebPartStrings' {
   const strings: IDevOpsWebPartStrings;
   export = strings;
 }
