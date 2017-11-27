@@ -13,7 +13,7 @@ import { MockSPListCollectionService, HttpSPListCollectionService } from "./data
 
 let _instance: number = 0;
 
-export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsWebPartProps> {
+export default class DevOpsWebPart extends BaseClientSideWebPart<IDevOpsWebPartProps> {
   private _id: number;
   private _componentElement: HTMLElement;
   private _koDescription: KnockoutObservable<string> = ko.observable("");
@@ -68,7 +68,7 @@ export default class DevOpsWebPartWebPart extends BaseClientSideWebPart<IDevOpsW
       tagName,
       {
         viewModel: DevOpsWebPartViewModel,
-        template: require("./DevOpsWebPart.template.html"),
+        template: require("./DevOps.template.html"),
         synchronous: false
       }
     );
