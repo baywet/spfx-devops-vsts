@@ -1,7 +1,7 @@
 {
   "@microsoft/generator-sharepoint": {
     "libraryName": "sp-fx-devops",
-    "version": "1.3.4",
+    "version": "1.4.1",
     "libraryId": "5b5f92ac-4a48-483e-b4f6-8cd2878962a0",
     "environment": "spo"
   }
