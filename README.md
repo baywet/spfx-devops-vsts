@@ -1,6 +1,8 @@
 # sp-fx-devops
 
-The purpose of this repository is to demonstrate how to better integrate SharePoint Framework developments with Visual Studio Team Services in devops processes.
+The purpose of this repository is to demonstrate how to better integrate SharePoint Framework developments with Visual Studio Team Services in devops processes.  
+
+*Current Version Implemented* **1.4.1**
 
 ## Unit Tests
 
