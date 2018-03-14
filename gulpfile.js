@@ -107,5 +107,5 @@ build.task('deploy-sppkg', {
 
 build.initialize(gulp);
 var buildConfig = build.getConfig();
-var karmaTask = _.find(buildConfig.uniqueTasks, ['name', 'karma']);
+var karmaTask = _.find(buildConfig.uniqueTasks, (t) => t.name === 'karma');
 karmaTask.taskConfig.configPath = './config/karma.config.js';
