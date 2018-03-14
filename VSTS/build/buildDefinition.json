@@ -3,18 +3,6 @@
     {
       "enabled": false,
       "definition": {
-        "id": "7c555368-ca64-4199-add6-9ebaf0b0137d"
-      },
-      "inputs": {
-        "multipliers": "[]",
-        "parallel": "false",
-        "continueOnError": "true",
-        "additionalFields": "{}"
-      }
-    },
-    {
-      "enabled": false,
-      "definition": {
         "id": "a9db38f9-9fdc-478c-b0f9-464221e58316"
       },
       "inputs": {
@@ -22,13 +10,6 @@
         "assignToRequestor": "true",
         "additionalFields": "{}"
       }
-    },
-    {
-      "enabled": false,
-      "definition": {
-        "id": "57578776-4c22-4526-aeb0-86b6da17ee9c"
-      },
-      "inputs": {}
     },
     {
       "enabled": false,
@@ -54,12 +35,12 @@
     }
   ],
   "variables": {
+    "PHANTOMJS_BIN": {
+      "value": "C:\\NPM\\Modules\\PhantomJS.cmd"
+    },
     "system.debug": {
       "value": "false",
       "allowOverride": true
-    },
-    "PHANTOMJS_BIN": {
-      "value": "C:\\NPM\\Modules\\PhantomJS.cmd"
     }
   },
   "retentionRules": [
@@ -78,9 +59,163 @@
       "deleteTestResults": true
     }
   ],
+  "properties": {},
+  "tags": [],
+  "metrics": [
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/master",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/master",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/feature/CustomKarmaConfig",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/feature/CustomKarmaConfig",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/develop",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/develop",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/feature/CodeCoverage",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/feature/CodeCoverage",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/feature/PackagePublishing",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/feature/PackagePublishing",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/feature/SPSave",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/feature/SPSave",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/feature/BetterCodeCoverage",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/feature/BetterCodeCoverage",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/heads/feature/Upgrade141",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/heads/feature/Upgrade141",
+      "intValue": 0
+    },
+    {
+      "name": "SuccessfulBuilds",
+      "scope": "refs/heads/develop",
+      "intValue": 1,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "PartiallySuccessfulBuilds",
+      "scope": "refs/heads/develop",
+      "intValue": 1,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "FailedBuilds",
+      "scope": "refs/heads/develop",
+      "intValue": 0,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "CanceledBuilds",
+      "scope": "refs/heads/develop",
+      "intValue": 0,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "TotalBuilds",
+      "scope": "refs/heads/develop",
+      "intValue": 2,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "SuccessfulBuilds",
+      "scope": "refs/heads/feature/Upgrade141",
+      "intValue": 1,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "PartiallySuccessfulBuilds",
+      "scope": "refs/heads/feature/Upgrade141",
+      "intValue": 0,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "FailedBuilds",
+      "scope": "refs/heads/feature/Upgrade141",
+      "intValue": 0,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "CanceledBuilds",
+      "scope": "refs/heads/feature/Upgrade141",
+      "intValue": 0,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "TotalBuilds",
+      "scope": "refs/heads/feature/Upgrade141",
+      "intValue": 1,
+      "date": "2018-03-14T00:00:00.000Z"
+    },
+    {
+      "name": "CurrentBuildsInProgress",
+      "scope": "refs/pull/*",
+      "intValue": 0
+    },
+    {
+      "name": "CurrentBuildsInQueue",
+      "scope": "refs/pull/*",
+      "intValue": 0
+    }
+  ],
   "_links": {
     "self": {
-      "href": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13"
+      "href": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13?revision=29"
     },
     "web": {
       "href": "https://baywet.visualstudio.com/_permalink/_build/index?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
@@ -89,7 +224,7 @@
       "href": "https://baywet.visualstudio.com/_permalink/_build/definitionEditor?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
     }
   },
-  "comment": "adding the update manifest task",
+  "comment": "Draft published",
   "jobAuthorizationScope": 1,
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
@@ -108,13 +243,20 @@
             "refName": "NpmInstall_1",
             "task": {
               "id": "fe47e961-9fa8-4106-8639-368c022d43ad",
-              "versionSpec": "0.*",
+              "versionSpec": "1.*",
               "definitionType": "task"
             },
             "inputs": {
-              "cwd": "",
               "command": "install",
-              "arguments": ""
+              "workingDir": "",
+              "verbose": "false",
+              "customCommand": "",
+              "customRegistry": "useNpmrc",
+              "customFeed": "",
+              "customEndpoint": "",
+              "publishRegistry": "useExternalRegistry",
+              "publishFeed": "",
+              "publishEndpoint": ""
             }
           },
           {
@@ -185,7 +327,7 @@
             "inputs": {
               "gulpFile": "gulpfile.js",
               "targets": "update-manifest",
-              "arguments": "--cdnpath \"https://publiccdn.sharepoint.com/tenant/id/\"",
+              "arguments": "--cdnpath \"https://publiccdn.sharepointonline.com/tenant/id/\"",
               "cwd": "",
               "gulpjs": "node_modules/gulp/bin/gulp.js",
               "publishJUnitResults": "false",
@@ -260,21 +402,21 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
-            "displayName": "Copy Publish Artifact: drop",
+            "displayName": "Copy Files to: $(build.artifactstagingdirectory)/drop",
             "timeoutInMinutes": 0,
             "condition": "succeeded()",
-            "refName": "PublishBuildArtifacts_6",
             "task": {
-              "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
-              "versionSpec": "1.*",
+              "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+              "versionSpec": "2.*",
               "definitionType": "task"
             },
             "inputs": {
-              "CopyRoot": "",
-              "Contents": "config\\**\\*\ndist\\**\\*\nlib\\**\\*\nsharepoint\\**\\*\ntemp\\**\\*\ntypings\\**\\*\ngulpfile.js\npackage.json",
-              "ArtifactName": "drop",
-              "ArtifactType": "Container",
-              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+              "SourceFolder": "",
+              "Contents": "config\\**\\*\ndist\\**\\*\nlib\\**\\*\nsharepoint\\**\\*\ntemp\\**\\*\ntypings\\**\\*\ngulpfile.js\npackage.json\n**\\*.sppkg",
+              "TargetFolder": "$(build.artifactstagingdirectory)/drop",
+              "CleanTargetFolder": "false",
+              "OverWrite": "false",
+              "flattenFolders": "false"
             }
           },
           {
@@ -282,26 +424,79 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
-            "displayName": "Copy Publish Artifact: package",
+            "displayName": "Copy Files to: $(build.artifactstagingdirectory)/package",
             "timeoutInMinutes": 0,
             "condition": "succeeded()",
-            "refName": "PublishBuildArtifacts_7",
             "task": {
-              "id": "1d341bb0-2106-458c-8422-d00bcea6512a",
+              "id": "5bfb729a-a7c8-4a78-a7c3-8d717bb7c13c",
+              "versionSpec": "2.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "SourceFolder": "",
+              "Contents": "**\\*.sppkg",
+              "TargetFolder": "$(build.artifactstagingdirectory)/package",
+              "CleanTargetFolder": "false",
+              "OverWrite": "false",
+              "flattenFolders": "false"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact: package",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
               "versionSpec": "1.*",
               "definitionType": "task"
             },
             "inputs": {
-              "CopyRoot": "",
-              "Contents": "**\\*.sppkg",
+              "PathtoPublish": "$(build.artifactstagingdirectory)/package",
               "ArtifactName": "package",
               "ArtifactType": "Container",
-              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)"
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+              "Parallel": "false",
+              "ParallelCount": "8"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Artifact:  copy",
+            "timeoutInMinutes": 0,
+            "condition": "succeeded()",
+            "task": {
+              "id": "2ff763a7-ce83-4e1f-bc89-0ae63477cebe",
+              "versionSpec": "1.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "PathtoPublish": "$(build.artifactstagingdirectory)/drop",
+              "ArtifactName": "drop",
+              "ArtifactType": "Container",
+              "TargetPath": "\\\\my\\share\\$(Build.DefinitionName)\\$(Build.BuildNumber)",
+              "Parallel": "false",
+              "ParallelCount": "8"
             }
           }
         ],
-        "name": null,
-        "jobAuthorizationScope": 0
+        "name": "Phase 1",
+        "condition": "succeeded()",
+        "target": {
+          "executionOptions": {
+            "type": 0
+          },
+          "allowScriptsAuthAccessOption": false,
+          "type": 1
+        },
+        "jobAuthorizationScope": "projectCollection",
+        "jobCancelTimeoutInMinutes": 1
       }
     ],
     "type": 1
@@ -325,20 +520,26 @@
     "clean": "false",
     "checkoutSubmodules": false
   },
-  "processParameters": {
-    "inputs": []
-  },
+  "processParameters": {},
   "quality": 1,
   "authoredBy": {
-    "id": "536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
     "displayName": "Vincent BIRET",
+    "url": "https://pc310e65e-2e47-4665-b411-1b0912dbb016.codex.ms/vssps/_apis/Identities/536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
+    "id": "536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
     "uniqueName": "",
-    "url": "https://app.vssps.visualstudio.com/Ac310e65e-2e47-4665-b411-1b0912dbb016/_apis/Identities/536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
-    "imageUrl": "https://baywet.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d"
+    "imageUrl": "https://baywet.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
+    "descriptor": "msa.NDFjYjAxOTctZmJjOC03MGEyLThjODUtNjUxNTM4MjUyZjY4"
   },
+  "drafts": [],
   "queue": {
+    "_links": {
+      "self": {
+        "href": "https://baywet.visualstudio.com/_apis/build/Queues/2"
+      }
+    },
     "id": 2,
     "name": "Hosted",
+    "url": "https://baywet.visualstudio.com/_apis/build/Queues/2",
     "pool": {
       "id": 2,
       "name": "Hosted",
@@ -347,12 +548,13 @@
   },
   "id": 13,
   "name": "SpFxDevOps",
-  "url": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13",
+  "url": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13?revision=29",
   "uri": "vstfs:///Build/Definition/13",
   "path": "\\",
   "type": 2,
-  "revision": 27,
-  "createdDate": "2017-07-22T23:05:01.007Z",
+  "queueStatus": 0,
+  "revision": 29,
+  "createdDate": "2018-03-14T03:08:41.133Z",
   "project": {
     "id": "b80138c3-28df-4282-bc1d-6fa534f75b70",
     "name": "Sessions",
