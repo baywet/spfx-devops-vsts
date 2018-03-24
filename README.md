@@ -21,9 +21,6 @@ In order to use that configuration you need to install a few extra modules:
 npm i karma-junit-reporter karma-remap-coverage karma-remap-istanbul -D
 ```
 
-Next steps:
-- providing some stubs demos with [sinon](https://semaphoreci.com/community/tutorials/best-practices-for-spies-stubs-and-mocks-in-sinon-js) 
-
 ### Writing better unit tests
 To make it easier writing unit tests we added some extra modules
 ```
@@ -49,6 +46,7 @@ npm i gulp-spsync-creds node-sppkg-deploy -D
 
 ## Configuring VSTS
 ### Build
-You'll find an example of the build definition in the `VSTS/build` directory.
+You'll find an example of the build definition in the `VSTS/build` directory.  
+You'll also find an additionnal build definition example demonstrating [SonarQube](https://www.sonarqube.org/) integration for static anlysis.
 ### Release
 You'll find an example of the release definition in the `VSTS/Release` directory.
