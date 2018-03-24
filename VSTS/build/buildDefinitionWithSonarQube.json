@@ -61,170 +61,18 @@
   ],
   "properties": {},
   "tags": [],
-  "metrics": [
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/master",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/master",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/feature/CustomKarmaConfig",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/feature/CustomKarmaConfig",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/develop",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/develop",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/feature/CodeCoverage",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/feature/CodeCoverage",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/feature/PackagePublishing",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/feature/PackagePublishing",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/feature/SPSave",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/feature/SPSave",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/feature/BetterCodeCoverage",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/feature/BetterCodeCoverage",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/heads/feature/Upgrade141",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/heads/feature/Upgrade141",
-      "intValue": 0
-    },
-    {
-      "name": "SuccessfulBuilds",
-      "scope": "refs/heads/develop",
-      "intValue": 1,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "PartiallySuccessfulBuilds",
-      "scope": "refs/heads/develop",
-      "intValue": 1,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "FailedBuilds",
-      "scope": "refs/heads/develop",
-      "intValue": 0,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "CanceledBuilds",
-      "scope": "refs/heads/develop",
-      "intValue": 0,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "TotalBuilds",
-      "scope": "refs/heads/develop",
-      "intValue": 2,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "SuccessfulBuilds",
-      "scope": "refs/heads/feature/Upgrade141",
-      "intValue": 1,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "PartiallySuccessfulBuilds",
-      "scope": "refs/heads/feature/Upgrade141",
-      "intValue": 0,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "FailedBuilds",
-      "scope": "refs/heads/feature/Upgrade141",
-      "intValue": 0,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "CanceledBuilds",
-      "scope": "refs/heads/feature/Upgrade141",
-      "intValue": 0,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "TotalBuilds",
-      "scope": "refs/heads/feature/Upgrade141",
-      "intValue": 1,
-      "date": "2018-03-14T00:00:00.000Z"
-    },
-    {
-      "name": "CurrentBuildsInProgress",
-      "scope": "refs/pull/*",
-      "intValue": 0
-    },
-    {
-      "name": "CurrentBuildsInQueue",
-      "scope": "refs/pull/*",
-      "intValue": 0
-    }
-  ],
   "_links": {
     "self": {
-      "href": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13?revision=29"
+      "href": "https://contoso.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13?revision=32"
     },
     "web": {
-      "href": "https://baywet.visualstudio.com/_permalink/_build/index?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
+      "href": "https://contoso.visualstudio.com/_permalink/_build/index?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
     },
     "editor": {
-      "href": "https://baywet.visualstudio.com/_permalink/_build/definitionEditor?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
+      "href": "https://contoso.visualstudio.com/_permalink/_build/definitionEditor?collectionId=1129b30b-85e7-4110-a248-8c49be09dc06&projectId=b80138c3-28df-4282-bc1d-6fa534f75b70&definitionId=13"
     }
   },
-  "comment": "Draft published",
+  "comment": "enabling SQ SA only on dev builds",
   "jobAuthorizationScope": 1,
   "jobTimeoutInMinutes": 60,
   "jobCancelTimeoutInMinutes": 5,
@@ -293,6 +141,66 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
+            "displayName": "Prepare analysis on SonarQube",
+            "timeoutInMinutes": 0,
+            "condition": "and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))",
+            "task": {
+              "id": "15b84ca1-b62f-4a2a-a403-89b77a063157",
+              "versionSpec": "4.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "SonarQube": "aba736b8-53d8-4c6b-b6ec-9e5e0a1c9fb2",
+              "scannerMode": "CLI",
+              "configMode": "manual",
+              "configFile": "sonar-project.properties",
+              "cliProjectKey": "spfxdevops",
+              "projectKey": "",
+              "cliProjectName": "SpFxDevOps",
+              "projectName": "",
+              "cliProjectVersion": "1.0",
+              "projectVersion": "1.0",
+              "cliSources": ".",
+              "extraProperties": "sonar.sources=src\nsonar.exclusions=**/node_modules/**,**/dist/**,**/.tmp/**,**/.vscode/**,**/webpack/**, **/test/**, **/*.js, *.js\nsonar.test.inclusions=src/**/*.test.ts\nsonar.ts.tslint.configPath=tslint.json\nsonar.typescript.lcov.reportPaths=test/coverage/lcov/lcov.info"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Run Code Analysis",
+            "timeoutInMinutes": 0,
+            "condition": "and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))",
+            "task": {
+              "id": "6d01813a-9589-4b15-8491-8164aeb38055",
+              "versionSpec": "4.*",
+              "definitionType": "task"
+            },
+            "inputs": {}
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
+            "displayName": "Publish Quality Gate Result",
+            "timeoutInMinutes": 0,
+            "condition": "and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/develop'))",
+            "task": {
+              "id": "291ed61f-1ee4-45d3-b1b0-bf822d9095ef",
+              "versionSpec": "4.*",
+              "definitionType": "task"
+            },
+            "inputs": {
+              "pollingTimeoutSec": "300"
+            }
+          },
+          {
+            "environment": {},
+            "enabled": true,
+            "continueOnError": false,
+            "alwaysRun": false,
             "displayName": "Publish Code Coverage Results $(Build.SourcesDirectory)/temp/coverage/cobertura/cobertura.xml",
             "timeoutInMinutes": 0,
             "condition": "succeeded()",
@@ -327,7 +235,7 @@
             "inputs": {
               "gulpFile": "gulpfile.js",
               "targets": "update-manifest",
-              "arguments": "--cdnpath \"https://publiccdn.sharepointonline.com/tenant/id/\"",
+              "arguments": "--cdnpath \"https://publiccdn.sharepointonline.com/contoso.sharepoint.com/18650069eeb2113d11c3e72bc3a1e6e6dc9a22e7deef226155cb3b618b99e3e77ae36ef4/\"",
               "cwd": "",
               "gulpjs": "node_modules/gulp/bin/gulp.js",
               "publishJUnitResults": "false",
@@ -342,7 +250,7 @@
           {
             "environment": {},
             "enabled": true,
-            "continueOnError": false,
+            "continueOnError": true,
             "alwaysRun": false,
             "displayName": "gulp bundle",
             "timeoutInMinutes": 0,
@@ -468,7 +376,7 @@
             "enabled": true,
             "continueOnError": false,
             "alwaysRun": false,
-            "displayName": "Publish Artifact:  copy",
+            "displayName": "Publish Artifact:  drop",
             "timeoutInMinutes": 0,
             "condition": "succeeded()",
             "task": {
@@ -487,6 +395,7 @@
           }
         ],
         "name": "Phase 1",
+        "refName": "Phase_1",
         "condition": "succeeded()",
         "target": {
           "executionOptions": {
@@ -515,7 +424,7 @@
     "id": "2ee7c4d8-ff16-4f49-8e5e-a7d8d6564e46",
     "type": "TfsGit",
     "name": "SpFxDevops",
-    "url": "https://baywet.visualstudio.com/Sessions/_git/SpFxDevops",
+    "url": "https://contoso.visualstudio.com/Sessions/_git/SpFxDevops",
     "defaultBranch": "refs/heads/develop",
     "clean": "false",
     "checkoutSubmodules": false
@@ -523,23 +432,28 @@
   "processParameters": {},
   "quality": 1,
   "authoredBy": {
-    "displayName": "Vincent BIRET",
-    "url": "https://pc310e65e-2e47-4665-b411-1b0912dbb016.codex.ms/vssps/_apis/Identities/536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
+    "displayName": "",
+    "url": "https://app.vssps.visualstudio.com/Ac310e65e-2e47-4665-b411-1b0912dbb016/_apis/Identities/536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
+    "_links": {
+      "avatar": {
+        "href": "https://contoso.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d"
+      }
+    },
     "id": "536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
     "uniqueName": "",
-    "imageUrl": "https://baywet.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
+    "imageUrl": "https://contoso.visualstudio.com/_api/_common/identityImage?id=536d4ee9-0ae3-4d12-8a9d-843cc5edf21d",
     "descriptor": "msa.NDFjYjAxOTctZmJjOC03MGEyLThjODUtNjUxNTM4MjUyZjY4"
   },
   "drafts": [],
   "queue": {
     "_links": {
       "self": {
-        "href": "https://baywet.visualstudio.com/_apis/build/Queues/2"
+        "href": "https://contoso.visualstudio.com/_apis/build/Queues/2"
       }
     },
     "id": 2,
     "name": "Hosted",
-    "url": "https://baywet.visualstudio.com/_apis/build/Queues/2",
+    "url": "https://contoso.visualstudio.com/_apis/build/Queues/2",
     "pool": {
       "id": 2,
       "name": "Hosted",
@@ -548,18 +462,18 @@
   },
   "id": 13,
   "name": "SpFxDevOps",
-  "url": "https://baywet.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13?revision=29",
+  "url": "https://contoso.visualstudio.com/b80138c3-28df-4282-bc1d-6fa534f75b70/_apis/build/Definitions/13?revision=32",
   "uri": "vstfs:///Build/Definition/13",
   "path": "\\",
   "type": 2,
   "queueStatus": 0,
-  "revision": 29,
-  "createdDate": "2018-03-14T03:08:41.133Z",
+  "revision": 32,
+  "createdDate": "2018-03-24T22:57:32.537Z",
   "project": {
     "id": "b80138c3-28df-4282-bc1d-6fa534f75b70",
     "name": "Sessions",
     "description": "Stockage du code de mes sessions quand pas sur github",
-    "url": "https://baywet.visualstudio.com/_apis/projects/b80138c3-28df-4282-bc1d-6fa534f75b70",
+    "url": "https://contoso.visualstudio.com/_apis/projects/b80138c3-28df-4282-bc1d-6fa534f75b70",
     "state": "wellFormed",
     "revision": 438062069,
     "visibility": 0
